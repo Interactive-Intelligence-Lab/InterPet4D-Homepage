@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="InterPet4D: A Multimodal 4D Human-Pet Interaction Dataset for Pet Motion Generation. ECCV 2026.">
+  <meta name="keywords" content="InterPet4D, Human-Pet Interaction, Dog Motion, Motion Generation, Multimodal Dataset, ECCV 2026">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InterPet4D: A Multimodal 4D Human-Pet Interaction Dataset</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">
+            InterPet4D: A Multimodal 4D Human&ndash;Pet<br>
+            Interaction Dataset for Pet Motion Generation
+          </h1>
+          <h2 class="subtitle is-4 has-text-grey" style="margin-top: 0.5em;">ECCV 2026</h2>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#" target="_blank">Yichen Peng</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="#" target="_blank">Jyun-Ting Song</a><sup>1,2*</sup>,</span>
+            <span class="author-block">
+              <a href="#" target="_blank">Chen-Chieh Liao</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://kkitani.github.io/" target="_blank">Kris Kitani</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="#" target="_blank">Hideki Koike</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#" target="_blank">Erwin Wu</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Institute of Science Tokyo</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Carnegie Mellon University</span>
+          </div>
+          <div class="is-size-6 publication-authors" style="margin-top: 0.3em;">
+            <span><sup>*</sup>Equal contribution</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-database"></i></span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-youtube"></i></span>
+                  <span>Video</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline poster="./static/images/teaser.png" style="width: 100%;">
+        <source src="./static/videos/teaser.mp4" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered" style="margin-top: 1em;">
+        <span class="dnerf">InterPet4D</span> is the first large-scale multimodal 4D dataset of natural
+        human&ndash;dog interactions, with synchronized multi-view + egocentric video, audio, and 3D motion of both humans and dogs.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Human&ndash;pet interaction estimation and generation remain underexplored due to the absence of
+            high-quality large-scale datasets. We present <strong>InterPet4D</strong>, the first multimodal
+            dataset capturing natural interactions between humans and dogs. Using a synchronized multi-view
+            capture system, we record human&ndash;dog obedience tasks and provide annotations for both humans
+            and dogs, including multiview and egocentric videos, segmentations, 2D/3D keypoints, meshes, and
+            audio tracks. InterPet4D consists of <strong>6.8 million frames</strong> collected from
+            <strong>13 dogs of 11 breeds</strong> interacting with <strong>23 human participants</strong>.
+          </p>
+          <p>
+            We further introduce the <strong>InterPetMoGen</strong> framework for human-pet interaction
+            motion generation. Our proposed model achieves an FID score of <strong>11.21</strong>, greatly
+            outperforming Seq2Seq or DiT baselines, demonstrating the effectiveness of InterPet4D for
+            modeling realistic human&ndash;pet interactions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dataset Overview -->
+<section class="section" style="background-color: #fafafa;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Dataset Overview</h2>
+    <div class="columns is-centered">
+      <div class="column">
+        <figure class="image">
+          <img src="./static/images/capture_setup.png" alt="Capture setup">
+        </figure>
+        <p class="has-text-centered is-size-6" style="margin-top: 0.5em;">
+          <em>Figure 2.</em> Multi-sensor capture: 12 synchronized GoPro Hero13 cameras (1920&times;1080, 60 fps) in
+          a square layout, plus Ray-Ban Meta glasses for egocentric RGB + audio.
+        </p>
+      </div>
+    </div>
+
+    <div class="columns is-centered" style="margin-top: 2em;">
+      <div class="column">
+        <h3 class="title is-4">Statistics</h3>
+        <table class="table is-bordered is-striped is-fullwidth">
+          <tbody>
+            <tr><td>No. of dogs</td><td>13</td></tr>
+            <tr><td>No. of dog breeds</td><td>11 (+2 puppies)</td></tr>
+            <tr><td>No. of human subjects</td><td>23 (incl. 11 trainers)</td></tr>
+            <tr><td>Third-person cameras</td><td>12 &times; (1920&times;1080, 60 fps)</td></tr>
+            <tr><td>Egocentric camera</td><td>1 &times; (1200&times;1600, 60 fps)</td></tr>
+            <tr><td>Total recording sessions</td><td>161</td></tr>
+            <tr><td>Total frames</td><td>6.83M</td></tr>
+            <tr><td>Human representation</td><td>Pose, SMPL-X, MANO</td></tr>
+            <tr><td>Dog representation</td><td>Pose, SMAL</td></tr>
+            <tr><td>Audio</td><td>Aligned voice command</td></tr>
+            <tr><td>Text caption</td><td>Annotated per clip</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Interaction Taxonomy -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Interaction Taxonomy</h2>
+    <p class="has-text-centered has-text-grey" style="margin-bottom: 2em;">
+      Four categories of common human&ndash;dog interactions, each emphasizing different communication modalities.
+    </p>
+
+    <div class="columns is-multiline">
+      <div class="column is-half">
+        <div class="box">
+          <h3 class="title is-5">🤚 Petting</h3>
+          <p>Close-range hand motion and the dog's postural response (leaning in, tail wagging).</p>
+          <video autoplay muted loop playsinline style="width: 100%; margin-top: 0.5em;">
+            <source src="./static/videos/petting.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="box">
+          <h3 class="title is-5">🗣️ Commanding</h3>
+          <p>Verbal + gestural commands (sit, stay, shake, turn around) with the dog's trained responses.</p>
+          <video autoplay muted loop playsinline style="width: 100%; margin-top: 0.5em;">
+            <source src="./static/videos/commanding.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="box">
+          <h3 class="title is-5">📣 Calling</h3>
+          <p>Calling the dog from a distance using voice and hand beckoning, capturing locomotion and attention shifts.</p>
+          <video autoplay muted loop playsinline style="width: 100%; margin-top: 0.5em;">
+            <source src="./static/videos/calling.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="box">
+          <h3 class="title is-5">🎾 Free-form</h3>
+          <p>Unscripted interactions: fetch, tug-of-war, chase &mdash; the full diversity of everyday dynamics.</p>
+          <video autoplay muted loop playsinline style="width: 100%; margin-top: 0.5em;">
+            <source src="./static/videos/freeform.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Method -->
+<section class="section" style="background-color: #fafafa;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">InterPetMoGen (IPMG)</h2>
+    <p class="has-text-centered has-text-grey" style="margin-bottom: 2em;">
+      A MotionGPT-style autoregressive framework for gesture-to-pet motion generation.
+    </p>
+
+    <figure class="image">
+      <img src="./static/images/architecture.png" alt="InterPetMoGen architecture">
+    </figure>
+    <p class="has-text-centered is-size-6" style="margin-top: 0.5em;">
+      <em>Figure 3.</em> Human body / hand gestures and audio are encoded into discrete tokens; a transformer
+      with Modality-aware Attention (MMA) masks autoregressively generates dog motion tokens decoded by PetVAE.
+    </p>
+
+    <div class="content" style="margin-top: 2em;">
+      <ul>
+        <li><strong>PetVAE tokenizer</strong> &mdash; learns a compact discrete latent for dog motion.</li>
+        <li><strong>Modality-specific encoders</strong> for body, hand, translation, and audio.</li>
+        <li><strong>Modality-aware Attention (MMA)</strong> masks &mdash; combine bidirectional conditioning with causal autoregressive decoding for coarse-to-fine motion generation.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results</h2>
+
+    <div class="columns is-centered" style="margin-top: 1em;">
+      <div class="column is-three-quarters">
+        <table class="table is-bordered is-striped is-fullwidth has-text-centered">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>FID &darr;</th>
+              <th>Diversity &uarr;</th>
+              <th>R-Precision &uarr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Seq2Seq baseline</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+            <tr><td>DiT baseline</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+            <tr class="has-background-warning-light">
+              <td><strong>InterPetMoGen (Ours)</strong></td>
+              <td><strong>11.21</strong></td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="is-size-7 has-text-centered has-text-grey">
+          Fill in baseline numbers from the paper's experiment table.
+        </p>
+      </div>
+    </div>
+
+    <h3 class="title is-4 has-text-centered" style="margin-top: 2em;">Qualitative Examples</h3>
+    <div class="columns is-multiline">
+      <div class="column is-half">
+        <video autoplay muted loop playsinline style="width: 100%;">
+          <source src="./static/videos/result1.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered is-size-6">Example 1 &mdash; description</p>
+      </div>
+      <div class="column is-half">
+        <video autoplay muted loop playsinline style="width: 100%;">
+          <source src="./static/videos/result2.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered is-size-6">Example 2 &mdash; description</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{peng2026interpet4d,
+  title     = {InterPet4D: A Multimodal 4D Human-Pet Interaction Dataset for Pet Motion Generation},
+  author    = {Peng, Yichen and Song, Jyun-Ting and Liao, Chen-Chieh and Kitani, Kris and Koike, Hideki and Wu, Erwin},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p class="is-size-7">
+        Template adapted from the <a href="https://nerfies.github.io/" target="_blank">Nerfies</a> project page.
+        Source code released under the
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a> license.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
